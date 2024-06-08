@@ -26,6 +26,6 @@ class FileController:
             raise NotFoundException(url)
         else:
             if path.exists(real_path):
-                handler.reactive_headers["content-type"] = mimeTypes.get(real_path.split(".")[-1], "text/html")
+                handler.reactive_headers["Content-Type"] = mimeTypes.get(real_path.split(".")[-1], "text/html")
                 return read_file(real_path)
             raise NotFoundException(url)

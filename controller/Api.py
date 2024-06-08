@@ -78,6 +78,6 @@ class ApiController:
             case "get-folder":
                 if "path" not in data or type(data["path"]) != str:
                     raise IncorrectApiRequestException("no path argument in get-folder request data")
-                handler.reactive_headers["content-type"] = "application/json"
+                handler.reactive_headers["Content-Type"] = "application/json"
                 result = ApiController.getFolder(handler.root, data["path"])
         return result.encode()

@@ -63,7 +63,7 @@ class Handler(BaseHTTPRequestHandler):
             if PRINT_ERRORS:
                 print(exception)
         if self.output != None:
-            self.reactive_headers["content-length"] = str(len(self.output))
+            self.reactive_headers["Content-Length"] = str(len(self.output))
         self.log_request(self.reactive_response)
         self.send_response_only(self.reactive_response)
         for header, value in self.reactive_headers.items():
