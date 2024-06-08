@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/$fs/css/dark.css">
+    <link rel="stylesheet" href="/$fs/css/style-folder.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/$fs/js/jquery-3.7.1.min.js"></script>
+    <script type="importmap">
+        {
+          "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+          }
+        }
+    </script>
+    <script type="module">
+        import '@material/web/textfield/outlined-text-field.js';
+        import '@material/web/icon/icon.js';
+        import '@material/web/iconbutton/outlined-icon-button.js';
+        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
+
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+    <script src="/$fs/js/script-folder.js"></script>
+
+    <title>{{ SITE_NAME }}</title>
+</head>
+
+<body class="dark">
+    <header>
+        <div class="address-bar">
+            <md-outlined-text-field label="Path" value="" prefix-text="/" class="path" id="address-bar-path">
+            </md-outlined-text-field>
+            <md-outlined-icon-button id="address-bar-back-button">
+                <md-icon class="override-material-icons">arrow_back</md-icon>
+            </md-outlined-icon-button>
+            <md-outlined-icon-button id="address-bar-home-button">
+                <md-icon class="override-material-icons">home</md-icon>
+            </md-outlined-icon-button>
+        </div>
+    </header>
+    <main>
+        <section id="fileview"></section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+.primary {
+    background: var(--md-sys-color-primary);
+    color: var(--md-sys-color-on-primary);
+}
+
+.secondary {
+    background: var(--md-sys-color-secondary);
+    color: var(--md-sys-color-on-secondary);
+}
+
+.tertiary {
+    background: var(--md-sys-color-tertiary);
+    color: var(--md-sys-color-on-tertiary);
+}
+
+.error {
+    background: var(--md-sys-color-error);
+    color: var(--md-sys-color-on-error);
+}
+
+.surface {
+    background: var(--md-sys-color-surface-container);
+    color: var(--md-sys-color-on-surface);
+}
+
+body {
+    user-select: none;
+    background: var(--md-sys-color-surface-container-lowest);
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 0;
+    padding: 1em;
+    background: var(--md-sys-color-surface-container-low);
+}
+
+.address-bar {
+    width: 75%;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.address-bar .path {
+    flex-grow: 0.75;
+}
+
+.override-material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: "liga";
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#fileview {
+    padding: 1.5em;
+    display: flex;
+    gap: 1.5em;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    flex-grow: 0.75;
+}
+
+div.card {
+    padding: 1em;
+    text-align: center;
+    width: 100px;
+    border-radius: 5px;
+}
+
+div.card svg {
+    padding-bottom: 1em;
+    border-bottom: solid 1px var(--md-sys-color-surface-bright);
+}
+
+div.card h3 {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    font-size: small;
+}
+
+div.card i {
+    color: var(--md-sys-color-outline);
+    font-size: smaller;
+}
+
+/* .icon svg {
+    height: 32px;
+    width: 32px;
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    padding: 6px;
+    height: min-content;
+    min-height: 33px;
+}
+
+
+button svg {
+    min-height: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.current-folder {
+    font-size: larger;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+    flex-grow: 1;
+    min-height: 33px;
+} */
