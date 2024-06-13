@@ -1,6 +1,6 @@
 # --- User configuration ---
 
-ROOT = "A:/Applications"
+ROOT = "e:\\1python"
 SITE_NAME = "File server"
 BIND_IP = "localhost"
 BIND_PORT = 80

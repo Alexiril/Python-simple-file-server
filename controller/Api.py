@@ -5,9 +5,27 @@ from urllib.parse import unquote
 from Functions import determinator, read_file
 from exceptions.IncorrectApiRequest import IncorrectApiRequestException
 from assets.icons import icons
+from os import path, rename
+from time import sleep
 
 
 class ApiController:
+
+    @staticmethod
+    def myrename(from_file,to_file):
+        try:
+            
+            rename(from_file, to_file)
+            while not path.exists(to_file):
+                    sleep(1)
+            return JSONEncoder().encode({
+            "result": "ok"
+        })       
+        except Exception as exception:
+            return JSONEncoder().encode({
+                "result": "error",
+                "cause": f"{exception}"
+            })
 
     @staticmethod
     def getFolder(root, url):
@@ -74,6 +92,7 @@ class ApiController:
         data = handler.rfile.read(cont_len).decode()
         data = JSONDecoder().decode(data)
         result = ""
+        self.myrename("e:\\1python\\ABOBA","e:\\1python\\calculator")
         match req:
             case "get-folder":
                 if "path" not in data or type(data["path"]) != str:
