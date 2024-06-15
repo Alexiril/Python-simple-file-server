@@ -35,13 +35,22 @@ header {
     margin: 0;
     padding: 1em;
     background: var(--md-sys-color-surface-container-low);
+    display: flex;
+}
+
+.theme-changer {
+    flex-grow: 0.25;
+    display: inline-flex;
+    text-align: right;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .address-bar {
-    width: 75%;
-    display: flex;
+    display: inline-flex;
     gap: 1em;
     align-items: center;
+    flex-grow: 0.75;
     color: var(--md-sys-color-on-surface);
 }
 
