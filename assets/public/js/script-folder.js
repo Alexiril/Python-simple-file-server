@@ -164,6 +164,39 @@ function deleteFileObject(fileObject) {
         });
     });
 }
+function newFolder() {
+    let fpath = getCookie("fpath");
+    if (typeof (fpath) == "undefined") {
+        fpath = "";
+        setCookie("fpath", fpath);
+    }
+    promptWindow(`New folder`, "create_new_folder", "Folder name", ``, "Create", 'New folder', (newName) => {
+        fetch(`/api/make-folder`, {
+            method: "POST",
+            body: JSON.stringify({
+                path: fpath,
+                new_folder: newName
+            }),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        }).then((response) => response.json()).then((json) => {
+            let data = json;
+            if (data.result == "ok") {
+                showMessage(`Folder created ${newName} successfully!`)
+            }
+            else {
+                showError(data.cause);
+                return;
+            }
+        }).catch(function (err) {
+            console.error('Fetch Error :-S', err);
+        }).finally(function () {
+            reloadFolder();
+        });
+    });
+
+}
 function go_back() {
     let fpath = getCookie("fpath");
     if (typeof (fpath) == "undefined") {
@@ -184,6 +217,8 @@ function update_buttons() {
     $("#address-bar-home-button").on("click", go_home);
     $("#address-bar-refresh-button").off("click");
     $("#address-bar-refresh-button").on("click", reloadFolder);
+    $("#address-bar-new-folder-button").off("click");
+    $("#address-bar-new-folder-button").on("click", newFolder);
 }
 $(document).ready(function () {
     $.event.special.rightclick = {

@@ -4,6 +4,7 @@ from Functions import encrypt_symmetric
 from controller.API.GetFolder import handle as getFolder
 from controller.API.Rename import handle as rename
 from controller.API.Delete import handle as delete
+from controller.API.MakeFolder import handle as makeFolder
 from exceptions.IncorrectApiRequest import IncorrectApiRequestException
 
 
@@ -39,6 +40,10 @@ class ApiController:
                     ApiController.checkArgument("path", req, data)
                     ApiController.checkArgument("file", req, data)
                     result = delete(handler.root, data)
+                case "make-folder":
+                    ApiController.checkArgument("path", req, data)
+                    ApiController.checkArgument("new_folder", req, data)
+                    result = makeFolder(handler.root, data)
         except Exception as e:
             handler.reactive_response = getattr(e, 'response', 500)
             return JSONEncoder().encode({
