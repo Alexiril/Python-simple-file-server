@@ -210,6 +210,9 @@ function go_home() {
     setCookie("fpath", "");
     reloadFolder();
 }
+function change_theme() {
+    $("body").toggleClass('dark light');
+}
 function update_buttons() {
     $("#address-bar-back-button").off("click");
     $("#address-bar-back-button").on("click", go_back);
@@ -219,6 +222,8 @@ function update_buttons() {
     $("#address-bar-refresh-button").on("click", reloadFolder);
     $("#address-bar-new-folder-button").off("click");
     $("#address-bar-new-folder-button").on("click", newFolder);
+    $("#theme-changer").off("click");
+    $("#theme-changer").on("click", change_theme);
 }
 $(document).ready(function () {
     $.event.special.rightclick = {
