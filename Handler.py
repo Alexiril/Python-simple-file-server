@@ -35,7 +35,8 @@ class Handler(BaseHTTPRequestHandler):
         self.reactive_headers = {
             "Content-Type": "text/html",
             "Server": SERVER_NAME,
-            'Date': self.date_time_string()
+            'Date': self.date_time_string(),
+            'Access-Control-Allow-Origin': '*'
         }
         self.reactive_response = 200
         super().__init__(request, client_address, server)
@@ -44,6 +45,8 @@ class Handler(BaseHTTPRequestHandler):
         self.do_HEAD()
         if type(self.output) == str:
             self.output = self.output.encode()
+        elif self.output == None:
+            self.output = b''
         elif type(self.output) != bytes:
             self.output = bytes(self.output)
         try:

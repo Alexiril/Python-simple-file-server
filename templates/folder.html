@@ -12,21 +12,11 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="/$fs/js/jquery-3.7.1.min.js"></script>
-    <script type="importmap">
-        {
-          "imports": {
-            "@material/web/": "https://esm.run/@material/web/"
-          }
-        }
-    </script>
-    <script type="module">
-        import '@material/web/textfield/outlined-text-field.js';
-        import '@material/web/icon/icon.js';
-        import '@material/web/iconbutton/outlined-icon-button.js';
-        import { styles as typescaleStyles } from '@material/web/typography/md-typescale-styles.js';
-
-        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
-    </script>
+    <script type="module" src="/$fs/js/import-material.js"></script>
+    <script src="/$fs/js/shared-functions.js"></script>
+    <script src="/$fs/js/context-menu.js"></script>
+    <script src="/$fs/js/confirm-window.js"></script>
+    <script src="/$fs/js/prompt-window.js"></script>
     <script src="/$fs/js/script-folder.js"></script>
 
     <title>{{ SITE_NAME }}</title>
@@ -35,13 +25,16 @@
 <body class="dark">
     <header>
         <div class="address-bar">
-            <md-outlined-text-field label="Path" value="" prefix-text="/" class="path" id="address-bar-path">
-            </md-outlined-text-field>
-            <md-outlined-icon-button id="address-bar-back-button">
-                <md-icon class="override-material-icons">arrow_back</md-icon>
-            </md-outlined-icon-button>
             <md-outlined-icon-button id="address-bar-home-button">
                 <md-icon class="override-material-icons">home</md-icon>
+            </md-outlined-icon-button>
+            <md-outlined-icon-button id="address-bar-back-button">
+                <md-icon class="override-material-icons">arrow_upward</md-icon>
+            </md-outlined-icon-button>
+            <md-outlined-text-field label="Path" value="" prefix-text="/" class="path" id="address-bar-path">
+            </md-outlined-text-field>
+            <md-outlined-icon-button id="address-bar-refresh-button">
+                <md-icon class="override-material-icons">refresh</md-icon>
             </md-outlined-icon-button>
         </div>
     </header>

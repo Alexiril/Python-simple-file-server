@@ -42,6 +42,7 @@ header {
     display: flex;
     gap: 1em;
     align-items: center;
+    color: var(--md-sys-color-on-surface);
 }
 
 .address-bar .path {
@@ -65,6 +66,7 @@ header {
 main {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: center;
 }
 
 #fileview {
@@ -74,7 +76,7 @@ main {
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
-    flex-grow: 0.75;
+    flex-grow: 1;
 }
 
 div.card {
@@ -82,6 +84,10 @@ div.card {
     text-align: center;
     width: 100px;
     border-radius: 5px;
+}
+
+div#empty-folder-card {
+    width: 75%;
 }
 
 div.card svg {
@@ -99,35 +105,3 @@ div.card i {
     color: var(--md-sys-color-outline);
     font-size: smaller;
 }
-
-/* .icon svg {
-    height: 32px;
-    width: 32px;
-}
-
-button {
-    border-radius: 5px;
-    border: none;
-    padding: 6px;
-    height: min-content;
-    min-height: 33px;
-}
-
-
-button svg {
-    min-height: 30px;
-    margin: 0;
-    padding: 0;
-}
-
-.current-folder {
-    font-size: larger;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: none;
-    border-radius: 5px;
-    width: fit-content;
-    flex-grow: 1;
-    min-height: 33px;
-} */
